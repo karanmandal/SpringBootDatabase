@@ -1,0 +1,4 @@
+com\krm\springboot\controller\UserController.class
+com\krm\springboot\model\UserItem.class
+com\krm\springboot\repository\UserRepository.class
+com\krm\springboot\SpringBootDatabaseApplication.class

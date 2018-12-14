@@ -2,6 +2,7 @@ package com.krm.springboot.controller;
 
 import com.krm.springboot.model.UserItem;
 import com.krm.springboot.repository.UserRepository;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,5 +39,13 @@ public class UserController {
 
         userRepository.deleteById(id);
         return "User removed!";
+    }
+
+    @RequestMapping("/find/{id}")
+    public String findUser(@PathVariable("id") Long id) {
+
+        Optional<UserItem> user = userRepository.findById(id);
+
+        return user.get().toString();
     }
 }

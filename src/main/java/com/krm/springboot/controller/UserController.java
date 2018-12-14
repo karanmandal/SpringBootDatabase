@@ -32,4 +32,11 @@ public class UserController {
 
         return "User added!";
     }
+
+    @RequestMapping("/remove/{id}")
+    public String removeUser(@PathVariable("id") Long id) {
+
+        userRepository.deleteById(id);
+        return "User removed!";
+    }
 }
